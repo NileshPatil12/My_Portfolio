@@ -40,51 +40,49 @@ function PortFolio() {
       live_link: "https://radiant-sable-c6d09e.netlify.app/",
       github: "https://github.com/NileshPatil12/EmailJs",
     },
-    // {
-    //   id: 5,
-    //   logo: SQL,
-    //   name: "Structured Query Language",
-    //   live_link:"https://reactjs-website123.netlify.app/",
-    //   github:"https://github.com/NileshPatil12/Shopzy-Ecommerce/",
-    // },
-    // {
-    //   id: 6,
-    //   logo: CPP,
-    //   name: "C++",
-    //   live_link:"https://reactjs-website123.netlify.app/",
-    //   github:"https://github.com/NileshPatil12/Shopzy-Ecommerce/",
-    // },
   ];
+
   return (
     <div
       name="Portfolio"
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10"
     >
       <div>
-        <h1 className="text-3xl font-bold mb-5">PortFolio</h1>
-        <span className=" underline font-semibold">Featured Projects</span>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 my-5">
+        <h1 className="text-4xl font-semibold text-center text-gray-800 mb-5">
+          Portfolio
+        </h1>
+        <p className="text-lg text-center text-gray-600 mb-8">
+          Featured Projects
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {cardItem.map(({ id, logo, name, live_link, github }) => (
-            <div className="md:max-w-sm mx-auto border-2 border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-              <img src={logo} className="w-full h-56 object-cover" alt={name} />
-              <div className="p-4">
-                <h2 className="text-xl font-bold mb-2">{name}</h2>
-                <div className="flex justify-between items-center mt-4">
+            <div
+              key={id}
+              className="max-w-xs mx-auto border-2 border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              <img
+                src={logo}
+                className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110"
+                alt={name}
+              />
+              <div className="p-6">
+                <h2 className="text-xl font-bold text-gray-800 mb-4">{name}</h2>
+                <div className="flex justify-between items-center">
                   <a
                     href={live_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-md transition duration-300"
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-md transition duration-300"
                   >
-                    Live
+                    Live Demo
                   </a>
                   <a
                     href={github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded-md transition duration-300"
+                    className="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-md transition duration-300"
                   >
-                    Source code
+                    Source Code
                   </a>
                 </div>
               </div>

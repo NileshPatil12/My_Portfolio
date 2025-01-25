@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import PortFolio from "./components/PortFolio";
-import Experience from "./components/Experience";
+import TechStack from "./components/TechStack";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import { Toaster } from "react-hot-toast";
@@ -16,7 +16,7 @@ function App() {
         <Home />
         <About />
         <PortFolio />
-        <Experience />
+        <TechStack />
         <Contact />
         <Footer />
       </div>
