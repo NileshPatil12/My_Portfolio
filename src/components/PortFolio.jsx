@@ -9,6 +9,7 @@ import Mail from "../../public/Project/Mail.png";
 import Portfolio from "../../public/Project/Portfolio.png";
 import Shopzy from "../../public/Project/Shopzy.png";
 import Weather from "../../public/Project/Weather.png";
+import Edtechlearn from "../../public/Project/Edtechlearn.png";
 
 function PortFolio() {
   const cardItem = [
@@ -39,6 +40,13 @@ function PortFolio() {
       name: "MailJS Sender",
       live_link: "https://radiant-sable-c6d09e.netlify.app/",
       github: "https://github.com/NileshPatil12/EmailJs",
+    },
+    {
+      id: 5,
+      logo: Edtechlearn,
+      name: "EdTechLearn",
+      live_link: "https://edtechlearn.netlify.app/",
+      github: "https://github.com/NileshPatil12/EduWeb",
     },
   ];
 
