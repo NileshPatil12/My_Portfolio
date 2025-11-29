@@ -14,7 +14,7 @@ import { FaNodeJs } from "react-icons/fa6";
 import { TbBrandCpp } from "react-icons/tb"; 
 import { TbSql } from "react-icons/tb";
 
-import ReactTyped from "react-typed";
+import LocalTyped from './LocalTyped';
 import Tooltip from './Tooltip';
 
 function Home() {
@@ -29,7 +29,7 @@ function Home() {
             <span className="text-xl text-gray-700 dark:text-gray-300">Welcome In My Feed</span>
             <div className="flex space-x-1 text-2xl md:text-4xl">
               <h1>Hello, I'm a  </h1>
-              <ReactTyped
+              <LocalTyped
                 className="text-red-700 dark:text-red-400 font-bold"
                 strings={["Full Stack Developer", "Good Programmer","IT Professional"]}
                 typeSpeed={40}
