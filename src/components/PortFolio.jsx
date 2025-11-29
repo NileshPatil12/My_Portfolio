@@ -56,17 +56,17 @@ function PortFolio() {
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10"
     >
       <div>
-        <h1 className="text-4xl font-semibold text-center text-gray-800 mb-5">
+        <h1 className="text-4xl font-semibold text-center text-gray-800 dark:text-gray-100 mb-5">
           Portfolio
         </h1>
-        <p className="text-lg text-center text-gray-600 mb-8">
+        <p className="text-lg text-center text-gray-600 dark:text-gray-300 mb-8">
           Featured Projects
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {cardItem.map(({ id, logo, name, live_link, github }) => (
             <div
               key={id}
-              className="max-w-xs mx-auto border-2 border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="max-w-xs mx-auto border-2 border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white dark:bg-gray-800"
             >
               <img
                 src={logo}
@@ -74,7 +74,7 @@ function PortFolio() {
                 alt={name}
               />
               <div className="p-6">
-                <h2 className="text-xl font-bold text-gray-800 mb-4">{name}</h2>
+                <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">{name}</h2>
                 <div className="flex justify-between items-center">
                   <a
                     href={live_link}
@@ -102,4 +102,4 @@ function PortFolio() {
   );
 }
 
-export default PortFolio;
+export default React.memo(PortFolio);

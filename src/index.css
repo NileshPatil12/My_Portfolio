@@ -6,3 +6,22 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+/* Smooth color transitions on theme change */
+html, body, #root {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Theme hover color variables used by components (change here for global effect) */
+:root {
+  --card-hover-border: #3b82f6; /* blue-500 */
+  --card-text-hover: #10b981; /* green-500 */
+  --card-hover-bg: #f8fafc; /* gray-50 */
+}
+
+html.dark {
+  /* Keep hover border the same as light (blue) and text green for brand consistency */
+  --card-hover-border: #3b82f6; /* blue-500 */
+  --card-text-hover: #10b981; /* green-500 */
+  --card-hover-bg: rgba(255,255,255,0.03); /* subtle light overlay in dark mode */
+}

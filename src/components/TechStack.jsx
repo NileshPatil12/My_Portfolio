@@ -1,22 +1,15 @@
-import React from "react";
-import html from "../../public/html.png";
-import css from "../../public/css.jpg";
-import CPP from "../../public/CPP.png";
-import javascript from "../../public/javascript.png";
-import reactjs from "../../public/reactjs.png";
-import node from "../../public/node.png";
-import SQL from "../../public/SQL.png";
+import React, { useMemo } from "react";
+/**
+ * TechStack
+ * - Lists TechCard components for each technology
+ * - Uses `techItems` constants and memoizes the data to prevent re-renders
+ */
+import TechCard from "./TechCard";
+import { techItems } from '../utils/constants';
 
 function TechStack() {
-  const cardItem = [
-    { id: 1, logo: html, name: "MongoDB" },
-    { id: 2, logo: css, name: "CSS" },
-    { id: 3, logo: CPP, name: "C++" },
-    { id: 4, logo: javascript, name: "JavaScript" },
-    { id: 5, logo: SQL, name: "SQL" },
-    { id: 6, logo: reactjs, name: "ReactJs" },
-    { id: 7, logo: node, name: "NodeJs" },
-  ];
+  // Use constants; useMemo avoids recalculating on each render
+  const cardItem = useMemo(() => techItems, []);
 
   return (
     <div
@@ -24,26 +17,16 @@ function TechStack() {
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-16"
     >
       <div>
-        <h1 className="text-4xl font-semibold text-center text-gray-800 mb-5 tracking-wide">
+        <h1 className="text-4xl font-semibold text-center text-gray-800 dark:text-gray-100 mb-5 tracking-wide">
         Tech Stack
         </h1>
-        <p className="text-lg text-center text-gray-600 mb-12">
+        <p className="text-lg text-center text-gray-600 dark:text-gray-300 mb-12">
         Tools & Technologies</p>
 
         {/* Cards grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
-          {cardItem.map(({ id, logo, name }) => (
-            <div
-              key={id}
-              className="flex flex-col items-center justify-center border-2 border-gray-300 rounded-xl p-6 shadow-xl transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl hover:border-blue-500 cursor-pointer"
-            >
-              <img
-                src={logo}
-                alt={name}
-                className="w-24 h-24 rounded-full object-cover mb-4 transition-all duration-500 transform hover:scale-110"
-              />
-              <h3 className="text-lg font-medium text-gray-700">{name}</h3>
-            </div>
+          {cardItem.map(({ id, logo, name, brand }) => (
+            <TechCard key={id} logo={logo} name={name} brand={brand} />
           ))}
         </div>
       </div>

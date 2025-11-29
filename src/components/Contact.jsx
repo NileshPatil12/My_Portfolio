@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -25,7 +24,6 @@ function Contact() {
         },
         (error) => {
           toast.error("Something went wrong. Please try again.");
-          console.log('FAILED...', error.text);
         },
       );
     e.target.reset();
@@ -36,24 +34,24 @@ function Contact() {
       name="Contact"
       className="max-w-screen-lg container mx-auto px-4 md:px-20 my-16"
     >
-      <h1 className="text-4xl font-semibold text-center text-gray-800 mb-4">Contact Me</h1>
-      <p className="text-center text-lg text-gray-600 mb-8">
+      <h1 className="text-4xl font-semibold text-center text-gray-800 dark:text-gray-100 mb-4">Contact Me</h1>
+      <p className="text-center text-lg text-gray-600 dark:text-gray-300 mb-8">
         Feel free to reach out. I’d love to hear from you!
       </p>
       <div className="flex flex-col items-center justify-center mt-5">
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="bg-white w-full md:w-96 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+          className="bg-white dark:bg-gray-800 w-full md:w-96 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-gray-800 dark:text-gray-100"
         >
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Send Your Message</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6 text-center">Send Your Message</h2>
 
           {/* Full Name Field */}
           <div className="flex flex-col mb-6">
-            <label className="block text-lg text-gray-700">Full Name</label>
+            <label className="block text-lg text-gray-700 dark:text-gray-300">Full Name</label>
             <input
               {...register("name", { required: "Name is required" })}
-              className="shadow-md border-2 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="shadow-md border-2 rounded-lg p-3 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
               id="name"
               name="name"
               type="text"
@@ -64,10 +62,10 @@ function Contact() {
 
           {/* Email Field */}
           <div className="flex flex-col mb-6">
-            <label className="block text-lg text-gray-700">Email Address</label>
+            <label className="block text-lg text-gray-700 dark:text-gray-300">Email Address</label>
             <input
               {...register("email", { required: "Email is required" })}
-              className="shadow-md border-2 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="shadow-md border-2 rounded-lg p-3 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
               id="email"
               name="email"
               type="email"
@@ -78,10 +76,10 @@ function Contact() {
 
           {/* Message Field */}
           <div className="flex flex-col mb-6">
-            <label className="block text-lg text-gray-700">Message</label>
+            <label className="block text-lg text-gray-700 dark:text-gray-300">Message</label>
             <textarea
               {...register("message", { required: "Message is required" })}
-              className="shadow-md border-2 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="shadow-md border-2 rounded-lg p-3 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
               id="message"
               name="message"
               placeholder="Enter your message"
